@@ -1,0 +1,4 @@
+.todos-to-complete {
+    display: flex;
+    flex-direction: row;
+}

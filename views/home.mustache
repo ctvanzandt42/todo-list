@@ -24,8 +24,8 @@
         <h4>Tasks to Complete!</h4>
         {{#todos}}
         <form class="todos-to-complete" action="complete/{{todo}}" method="post">
-            <button class="complete" type="submit" name="todo" value="{{todo}}">Finish!</button>
             <li>{{todo}}</li>
+            <button class="complete" type="submit" name="todo" value="{{todo}}">Finish!</button>
         </form>
         {{/todos}}
     </div>
