@@ -20,14 +20,20 @@ app.get('/', (req, res) => {
     res.render('home', { todos: data.todos, markoff: data.markoff });
 });
 
-app.post('/complete/:todo', (req, res) => {
-    let index = data.todos.findIndex(function (thing) {
-        return thing.todo === todo
-    });
+
+app.post("/complete/:todo", (req, res) => {
     let task = req.params.todo;
-    let target = data.todos[index];
-    target.completed = !target.completed;
-    data.markoff.push(target);
+    let index = data.todos.findIndex(function (item) { return item.todo === task });
+    let targetTodo = data.todos[index];
+    targetTodo.completed = !targetTodo.completed;
+    data.markoff.push(targetTodo);
     data.todos.splice(index, 1);
-    return res.redirect('/');
+    return res.redirect("/");
+});
+
+app.post('/todo', (req, res) => {
+    let newTodo = req.body;
+    newTodo.completed = false;
+    data.todos.push(newTodo);
+    res.redirect('/');
 });

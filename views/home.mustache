@@ -24,12 +24,18 @@
         <h4>Tasks to Complete!</h4>
         {{#todos}}
         <form class="todos-to-complete" action="complete/{{todo}}" method="post">
-            <button type="checkbox" name="todo" value="{{todo}}">Finish!</button>
+            <button class="complete" type="submit" name="todo" value="{{todo}}">Finish!</button>
             <li>{{todo}}</li>
         </form>
         {{/todos}}
     </div>
-
+    <div class="completed-tasks">
+        <h3>Completed Tasks</h3>
+        {{#markoff}}
+        <p>
+            {{todo}}
+        </p>
+        {{/markoff}}
     </div>
 
 
