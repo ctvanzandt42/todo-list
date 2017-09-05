@@ -15,3 +15,7 @@ app.set('view engine', 'mustache');
 app.listen(port, () => {
     console.log(`Running on port ${port}!`);
 });
+
+app.get('/', (req, res) => {
+    res.render('home', { todos: data.todos, markoff: data.markoff });
+});
