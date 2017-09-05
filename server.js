@@ -12,3 +12,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.engine('mustache', mustacheExpress());
 app.set('views', './views');
 app.set('view engine', 'mustache');
+app.listen(port, () => {
+    console.log(`Running on port ${port}!`);
+});
