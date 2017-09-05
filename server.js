@@ -19,3 +19,15 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
     res.render('home', { todos: data.todos, markoff: data.markoff });
 });
+
+app.post('/complete/:todo', (req, res) => {
+    let index = data.todos.findIndex(function (thing) {
+        return thing.todo === todo
+    });
+    let task = req.params.todo;
+    let target = data.todos[index];
+    target.completed = !target.completed;
+    data.markoff.push(target);
+    data.todos.splice(index, 1);
+    return res.redirect('/');
+});
