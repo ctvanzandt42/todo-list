@@ -1,4 +1,35 @@
+body {
+    background-image: url(https://i.pinimg.com/originals/79/46/b7/7946b7063297ebf1b5252dabc78905be.jpg);
+    text-align: center;
+    font-family: 'Gloria Hallelujah', 'cursive';
+}
+
+.header {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 60px;
+}
+
 .todos-to-complete {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+}
+
+.add-forms {
+    margin-top: -30px;
+}
+
+.add-tasks {
+    margin-top: -20px;
+}
+
+h3 {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+li {
+    margin-right: 10px;
+    list-style: none;
 }
